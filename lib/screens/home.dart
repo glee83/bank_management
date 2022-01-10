@@ -389,43 +389,60 @@ class Home extends StatelessWidget {
 
               child: Row(
                 children:  <Widget>[
-                  const Padding(
-                    padding: EdgeInsets.all(8.0),
-                    // child: Image(
-                    //   image: AssetImage('images/card_logo'),
-                    // ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Uber',
+                      style: GoogleFonts.satisfy(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30.0
+                      )
+                    ),
                   ),
 
                   Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Column(
-                        children: <Widget>[
-                          Text(
-                            'Uber Ride',
-                            style: GoogleFonts.poppins(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey[900]
+                      Container(
+                        margin: const EdgeInsets.only(left: 10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              'Uber Ride',
+                              style: GoogleFonts.poppins(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey[900]
+                              ),
                             ),
-                          ),
-                          Text(
-                            '1st Apr 2022',
-                            style: GoogleFonts.lato(
-                              fontSize: 16.0,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.grey.shade500
+                            Text(
+                              '1st Apr 2022',
+                              style: GoogleFonts.lato(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.grey.shade500
+                              ),
                             ),
+                            
+                            
+                          ]
+                        ),
+                      ),
+                      
+                      Container(
+                        margin: const EdgeInsets.only(left: 80.0),
+                        child: Text(
+                          "-23214",
+
+                          style: GoogleFonts.pacifico(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.teal
                           ),
-                          Text(
-                            'Uber Ride',
-                            style: GoogleFonts.poppins(
-                              fontSize: 18.0,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey
-                            ),
-                          ),
-                          
-                        ],
+                        ),
                       )
                     ],
                   )

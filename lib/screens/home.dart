@@ -88,7 +88,7 @@ class Home extends StatelessWidget {
               
               decoration:  BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                 color: Colors.teal[300],
+                 color: Colors.teal,
               ),
 
               child: Stack(
@@ -102,11 +102,11 @@ class Home extends StatelessWidget {
                       width: 70.0,
 
                       decoration: BoxDecoration(
-                        color: Colors.teal[100],
+                        color: Colors.deepOrange[300],
                         borderRadius: const BorderRadius.only(
                           bottomRight: Radius.circular(100),
-                          topLeft: Radius.circular(20.0),
-                          bottomLeft: Radius.circular(10),
+                          topLeft: Radius.circular(20.5),
+                          // bottomLeft: Radius.circular(10),
                           
                         ),
                       ),
@@ -121,11 +121,10 @@ class Home extends StatelessWidget {
                       width: 100.0,
 
                       decoration: BoxDecoration(
-                        color: Colors.teal[100],
+                        color: Colors.deepOrange[300],
                         borderRadius: const BorderRadius.only(
-                          bottomLeft: Radius.circular(10),
                           topLeft: Radius.circular(100.0),
-                          bottomRight: Radius.circular(20)
+                          bottomRight: Radius.circular(20.5)
                         )
                       ),
                     ),
@@ -393,6 +392,86 @@ class Home extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       'Uber',
+                      style: GoogleFonts.satisfy(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 30.0
+                      )
+                    ),
+                  ),
+
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Container(
+                        margin: const EdgeInsets.only(left: 10.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Text(
+                              'Uber Ride',
+                              style: GoogleFonts.poppins(
+                                fontSize: 18.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.grey[900]
+                              ),
+                            ),
+                            Text(
+                              '1st Apr 2022',
+                              style: GoogleFonts.lato(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.grey.shade500
+                              ),
+                            ),
+                            
+                            
+                          ]
+                        ),
+                      ),
+                      
+                      Container(
+                        margin: const EdgeInsets.only(left: 80.0),
+                        child: Text(
+                          "-23214",
+
+                          style: GoogleFonts.pacifico(
+                            fontSize: 25.0,
+                            fontWeight: FontWeight.normal,
+                            color: Colors.teal
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
+
+            const SizedBox(
+              height: 4.0,
+            ),
+              
+            Container(
+              height: 60.0,
+              width: double.infinity,
+
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10.0),
+                // image: const DecorationImage(
+                  
+                //   image: AssetImage('images/nike.png')
+                // ),
+              ),
+
+              child: Row(
+                children:  <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      'Nike',
                       style: GoogleFonts.satisfy(
                         color: Colors.black,
                         fontWeight: FontWeight.w900,

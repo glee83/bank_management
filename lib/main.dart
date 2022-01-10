@@ -1,3 +1,4 @@
+import 'package:card_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'screens/home.dart';
 void main() {
@@ -9,9 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return  MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      
+
+      routes: {
+        '/': (context) => const WelcomeScreen()
+      },
     );
   }
 }

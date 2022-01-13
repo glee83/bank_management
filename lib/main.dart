@@ -1,6 +1,6 @@
 import 'package:card_app/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'screens/home.dart';
+
 void main() {
   runApp( const MyApp());
 }
@@ -13,7 +13,6 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       
-
       routes: {
         '/': (context) => const WelcomeScreen()
       },

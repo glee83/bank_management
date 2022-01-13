@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
         margin: const EdgeInsets.only(left: 10, right: 10),
         
         child: ListView(
-          physics: const ClampingScrollPhysics(),
+          physics: const AlwaysScrollableScrollPhysics(),
 
           children: <Widget> [
             Container(
@@ -373,168 +373,121 @@ class Home extends StatelessWidget {
               ),
             ),
 
-            Container(
-              height: 60.0,
-              width: double.infinity,
-
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-                // image: const DecorationImage(
-                  
-                //   image: AssetImage('images/nike.png')
-                // ),
-              ),
-
-              child: Row(
-                children:  <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Uber',
-                      style: GoogleFonts.satisfy(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 30.0
-                      )
-                    ),
-                  ),
-
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        margin: const EdgeInsets.only(left: 10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: <Widget>[
-                            Text(
-                              'Uber Ride',
-                              style: GoogleFonts.poppins(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey[900]
-                              ),
-                            ),
-                            Text(
-                              '1st Apr 2022',
-                              style: GoogleFonts.lato(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.grey.shade500
-                              ),
-                            ),
-                            
-                            
-                          ]
-                        ),
-                      ),
-                      
-                      Container(
-                        margin: const EdgeInsets.only(left: 80.0),
-                        child: Text(
-                          "-23214",
-
-                          style: GoogleFonts.pacifico(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.teal
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
+            CustomCard(
+              brandTitle: 'Uber',
+              title: 'Uber Ride',
+              subTitle: '1st Apri 2022',
+              amount: '32048',
             ),
-
             const SizedBox(
               height: 4.0,
             ),
               
-            Container(
-              height: 60.0,
-              width: double.infinity,
-
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10.0),
-                // image: const DecorationImage(
-                  
-                //   image: AssetImage('images/nike.png')
-                // ),
-              ),
-
-              child: Row(
-                children:  <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      'Nike',
-                      style: GoogleFonts.satisfy(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w900,
-                        fontSize: 30.0
-                      )
-                    ),
-                  ),
-
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Container(
-                        margin: const EdgeInsets.only(left: 10.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: <Widget>[
-                            Text(
-                              'Uber Ride',
-                              style: GoogleFonts.poppins(
-                                fontSize: 18.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.grey[900]
-                              ),
-                            ),
-                            Text(
-                              '1st Apr 2022',
-                              style: GoogleFonts.lato(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.grey.shade500
-                              ),
-                            ),
-                            
-                            
-                          ]
-                        ),
-                      ),
-                      
-                      Container(
-                        margin: const EdgeInsets.only(left: 80.0),
-                        child: Text(
-                          "-23214",
-
-                          style: GoogleFonts.pacifico(
-                            fontSize: 25.0,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.teal
-                          ),
-                        ),
-                      )
-                    ],
-                  )
-                ],
-              ),
+            CustomCard(
+              brandTitle: 'Nike',
+              title: 'Nike Ride',
+              subTitle: '1st Apri 2022',
+              amount: '1048',
             )
-              
             
           ],
         ),
       ),
+    );
+  }
+}
 
-    
+class CustomCard extends StatelessWidget {
+
+  String brandTitle;
+  String title;
+  String subTitle;
+  String amount;
+
+  CustomCard({
+    Key? key,
+    required this.brandTitle,
+    required this.title,
+    required this.subTitle,
+    required this.amount
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 60.0,
+      width: double.infinity,
+
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10.0),
+        // image: const DecorationImage(
+          
+        //   image: AssetImage('images/nike.png')
+        // ),
+      ),
+
+      child: Row(
+        children:  <Widget>[
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              brandTitle,
+              style: GoogleFonts.satisfy(
+                color: Colors.black,
+                fontWeight: FontWeight.w900,
+                fontSize: 30.0
+              )
+            ),
+          ),
+
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(
+                margin: const EdgeInsets.only(left: 10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Text(
+                      title,
+                      style: GoogleFonts.poppins(
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.grey[900]
+                      ),
+                    ),
+                    Text(
+                      subTitle,
+                      style: GoogleFonts.lato(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.grey.shade500
+                      ),
+                    ),
+                    
+                    
+                  ]
+                ),
+              ),
+              
+              Container(
+                margin: const EdgeInsets.only(left: 80.0),
+                child: Text(
+                  amount,
+
+                  style: GoogleFonts.pacifico(
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.teal
+                  ),
+                ),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }
